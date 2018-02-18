@@ -1,0 +1,11 @@
+<p>
+  Lista de cursos do porta {{ nomePortal }}   <!-- INTERPOLAÇÃO -->
+</p>
+
+<ul>
+
+  <li *ngFor="let curso of cursos">   <!-- DIRETIVA *ngFor -->
+    {{ curso }}   <!-- INTERPOLAÇÃO -->
+  </li>
+
+</ul>
