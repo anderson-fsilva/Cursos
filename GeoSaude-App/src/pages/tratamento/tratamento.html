@@ -1,0 +1,105 @@
+<!--
+  Generated template for the TratamentoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-label>
+      <ion-label>
+        <h1 align="center">Tratamento</h1>
+        <h2 align="center">Tipos de Tratamento</h2>
+      </ion-label>
+
+    </ion-label>
+
+    <ion-item>
+      <ion-label>Positivo</ion-label>
+      <ion-checkbox checked="false"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Mecânico</ion-label>
+      <ion-checkbox checked="false"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Biológico</ion-label>
+      <ion-checkbox checked="false"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Químico</ion-label>
+      <ion-checkbox checked="false"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-label>
+      <h4>BTI G</h4>
+    </ion-label>
+
+    <ion-item>
+      <ion-label>Gramas</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Depósito</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+
+    <ion-label>
+
+      <h4>BTI WDg</h4>
+
+    </ion-label>
+    <ion-item>
+      <ion-label>Gramas</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Depósito</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-label>
+    <h4>BsG</h4>
+  </ion-label>
+  <ion-item>
+    <ion-label>Gramas</ion-label>
+    <ion-input type="number"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Depósito</ion-label>
+    <ion-input type="number"></ion-input>
+  </ion-item>
+
+  <br>
+  <br>
+  <!-- Botões de voltar e avançar -->
+
+  <div text-center>
+
+    <button ion-button icon-left (click)="GotoCulexPageRunBack()">
+      <ion-icon name="md-arrow-back"></ion-icon>
+      Anterior
+    </button>
+
+    <!-- Float the icon right -->
+    <button ion-button icon-right (click)="GotoHomePageRunBack()">
+      Finalizar
+      <ion-icon name="ios-cloudy"></ion-icon>
+    </button>
+
+  </div>
+
+
+</ion-content>

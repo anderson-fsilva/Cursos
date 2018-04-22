@@ -1,0 +1,84 @@
+<!--
+  Generated template for the ImovelPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Imóvel
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+
+    <ion-card-header>
+
+      <ion-input type="text" value="Nº 2059 Apartamento 101"></ion-input>
+
+    </ion-card-header>
+
+    <!--Select com o tipo do imovel-->
+    <ion-list>
+      <ion-item>
+        <ion-label>Tipo de Imóvel</ion-label>
+        <ion-select [(ngModel)]="visitInformation.houseType">
+          <ion-option value="1">Residência</ion-option>
+          <ion-option value="2">Comércio</ion-option>
+          <ion-option value="3">Indústria</ion-option>
+          <ion-option value="3">Serviço Privado</ion-option>
+          <ion-option value="3">Residência Com</ion-option>
+          <ion-option value="3">Imóvel em Construção</ion-option>
+          <ion-option value="4">Terreno Baldio</ion-option>
+          <ion-option value="3">Ponto Estratégico</ion-option>
+          <ion-option value="3">Outros</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <!--Select com o tipo da situação-->
+    <ion-list>
+      <ion-item>
+        <ion-label>Situação</ion-label>
+        <ion-select [(ngModel)]="visitInformation.houseSituation"> 
+          <ion-option value="1">Inspecionado</ion-option>
+          <ion-option value="2">Não Inspecionado</ion-option>
+          <ion-option value="3">Recuperado</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <!--Data da visita -->
+    <ion-item>
+      <ion-label>Data</ion-label>
+      <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="visitInformation.dateVisit"></ion-datetime>
+    </ion-item>
+
+    <!-- Ovitrampas -->
+    <ion-item>
+      <ion-label>Ovitrampas: </ion-label>
+      <ion-input type="text" ></ion-input>
+    </ion-item>
+
+    <!-- Formularios -->
+
+    <ion-list>
+
+      <!-- Função que chama o formulario a ser preenchido -->
+      <button ion-item (click)="GotoAedesPage(visitInformation)">
+        <ion-icon name="Formulário" item-start></ion-icon>
+        Formulário 1 - Índice LIRAa
+      </button>
+
+      <button ion-item class="button_settings">
+        <ion-icon color="danger" name="Form" item-start></ion-icon>
+        Formulário 2 - PSA
+      </button>
+
+    </ion-list>
+
+  </ion-card>
+</ion-content>

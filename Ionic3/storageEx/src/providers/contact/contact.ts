@@ -67,7 +67,7 @@ export class ContactProvider {
     })
     .catch((error) => {
       return Promise.reject(error);
-    })
+    });
   }
 
 }
