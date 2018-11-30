@@ -4,10 +4,12 @@
 const express = require('express')
 const ProdutoController = require('../Controller/ProdutoController')
 const PsaFormController = require('../Controller/PsaFormController')
+const LiraaFormController = require('../Controller/LiraaFormController')
 
 module.exports = function(app) {
     const produtoRoute = express.Router();        // Adquire uma rota; injeta uma rota.
     const psaFormRoute = express.Router();
+    const liraaFormRoute = express.Router();
 
 
 
@@ -18,9 +20,9 @@ module.exports = function(app) {
     })
 
 
+    
 
     // Quando acessamos as rotas no node, conforme mostrado acima, utilizamos o express.
-
 
     app.use('/produto', 
         produtoRoute.post('/', ProdutoController.registrarProduto),         // Essa rota é para o post.
@@ -32,7 +34,17 @@ module.exports = function(app) {
 
 
 
+    // Fazendo um post para o formulário PSA.
+
     app.use('/psa-form',
-        psaFormRoute.post('/', PsaFormController.psaFormRegister)
+        psaFormRoute.post('/', PsaFormController.psaFormRegister)   
+    )
+
+
+
+    // Fazendo um post para o formulário Liraa.
+
+    app.use('/liraa-form',
+        liraaFormRoute.post('/', LiraaFormController.liraaFormRegister) 
     )
 }

@@ -1,0 +1,67 @@
+<!--
+  Generated template for the CriarProdutosPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>CriarProdutos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <form [formGroup]="formProduto" (ngSubmit)="criarProduto(); $event.preventDefault()">
+
+    <ion-list no-lines>
+
+      <ion-item *ngIf="error">
+        <p>Os dados informados estão inválidos</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Nome</ion-label>
+        <ion-input type="text" spellcheck="false" autocapitalize="off" formControlName="nome"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="formProduto.get('nome').errors && formProduto.get('nome').dirty">
+        <p *ngIf="formProduto.get('nome').hasError('required')">Campo Obrigatório</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Marca</ion-label>
+        <ion-input type="text" spellcheck="false" autocapitalize="off" formControlName="marca"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="formProduto.get('marca').errors && formProduto.get('marca').dirty">
+        <p *ngIf="formProduto.get('marca').hasError('required')">Campo Obrigatório</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Quantidade</ion-label>
+        <ion-input type="text" spellcheck="false" autocapitalize="off" formControlName="quantidade"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="formProduto.get('quantidade').errors && formProduto.get('quantidade').dirty">
+        <p *ngIf="formProduto.get('quantidade').hasError('required')">Campo Obrigatório</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Valor</ion-label>
+        <ion-input type="text" spellcheck="false" autocapitalize="off" formControlName="valor"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="formProduto.get('valor').errors && formProduto.get('valor').dirty">
+        <p *ngIf="formProduto.get('valor').hasError('required')">Campo Obrigatório</p>
+      </ion-item>
+
+
+      <button ion-button full type="submit" [disabled]="formProduto.invalid">Enviar</button>
+
+    </ion-list>
+
+
+
+  </form>
+
+</ion-content>

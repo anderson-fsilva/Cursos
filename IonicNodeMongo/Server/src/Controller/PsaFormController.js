@@ -6,7 +6,7 @@ const PsaForm = require('../Models/psaFormModel')
 // Criando primeiro método, onde iremos requirir (req), mandar uma resposta (res) e pular para o próximo (next).
 exports.psaFormRegister = function(req, res, next) {
    
-    // Criando objeto Produto a partir da requição.
+    // Criando objeto Produto a partir da requisição.
     PsaForm.create({
         
         places: req.body.places,

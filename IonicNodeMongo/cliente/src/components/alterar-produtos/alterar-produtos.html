@@ -1,0 +1,78 @@
+/<!--   Html para o editar produtos  -->
+
+
+
+
+
+<!-- Header com o título e com um botão para fechar o Modal -->
+
+<ion-header id="header">
+
+    <ion-navbar>
+      <ion-title>Alterar Produtos</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only clear color="dark" (click)="fechaModal()">
+          <ion-icon name="md-close-circle"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+  
+  </ion-header>
+  
+
+
+  <!--  Content com os campos a serem preenchidos e com o botão de enviar -->
+  
+  <ion-content padding id="content" no-bouce>     <!-- no-bouce: indica que a tela não tera rolagem -->  
+
+    <form padding [formGroup]="formProduto" (ngSubmit)="alterarProduto(); $event.preventDefault()" class="form" ion-fixed>    <!-- ion-fixed: indica a tela deve ser fixa -->
+  
+      <ion-list no-lines>
+  
+        <ion-item *ngIf="error">
+          <p>Os dados informados estão inválidos</p>
+        </ion-item>
+  
+        <ion-item> 
+          <ion-label floating>Nome</ion-label>
+          <ion-input type="text" spellcheck="false" autocapitalize="off" formControlName="nome"></ion-input>
+        </ion-item>
+        <!-- Verifica se há algum erro nesse campo e se ele já está sujo, ou seja, se já foi preenchido algo nele  -->
+        <ion-item *ngIf="formProduto.get('nome').errors && formProduto.get('nome').dirty">
+          <p *ngIf="formProduto.get('nome').hasError('required')">Campo Obrigatório</p>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label floating>Marca</ion-label>
+          <ion-input type="text" spellcheck="false" autocapitalize="off" formControlName="marca"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="formProduto.get('marca').errors && formProduto.get('marca').dirty">
+          <p *ngIf="formProduto.get('marca').hasError('required')">Campo Obrigatório</p>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label floating>Quantidade</ion-label>
+          <ion-input type="text" spellcheck="false" autocapitalize="off" formControlName="quantidade"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="formProduto.get('quantidade').errors && formProduto.get('quantidade').dirty">
+          <p *ngIf="formProduto.get('quantidade').hasError('required')">Campo Obrigatório</p>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label floating>Valor</ion-label>
+          <ion-input type="text" spellcheck="false" autocapitalize="off" formControlName="valor"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="formProduto.get('valor').errors && formProduto.get('valor').dirty">
+          <p *ngIf="formProduto.get('valor').hasError('required')">Campo Obrigatório</p>
+        </ion-item>
+  
+  
+        <button ion-button full type="submit" [disabled]="formProduto.invalid">Enviar</button>
+  
+      </ion-list>
+  
+  
+  
+    </form>
+  
+  </ion-content>

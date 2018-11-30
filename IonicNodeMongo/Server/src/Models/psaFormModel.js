@@ -5,52 +5,42 @@ const mongoose = require('mongoose')
 var Schema = mongoose.Schema;
 
 
-
-
-/*var Immobile = new Schema ({
-  tpImmobile: Number,
-  situationImmobile: Number,
-  dateVisit: String
-  })
-*/
-
-
 var PsaFormSchema = new Schema({
 
   places: {
-      type: String,
+      type: String, 
       required: [true, 'Informe o logradouro corretamente']
   },
 
   immobile: {
-    tpImmobile: Number,
-    situationImmobile: Number,
+    tpImmobile: String,
+    situationImmobile: String,
     dateVisit: String,
   },
 
   trash: {
-    tpTrash: Number,
-    packaging: Number,                  // Acondicionamento
-    domicileTrashDestiny: Number       // Se o lixo for domiciliar, qual o destino?
+    tpTrash: String,
+    packaging: String,                  // Acondicionamento
+    domicileTrashDestiny: String       // Se o lixo for domiciliar, qual o destino?
   },
 
   vtAedes: {
     
-    tpBreedingGrounds: {
-      A1: Number,
-      A2: Number,
-      B: Number,
-      C: Number,
-      D1: Number,
-      D2: Number,
-      E: Number
-    },    // Tipo de criadouros
+    tpBreedingGrounds: {        // Tipo de criadouros.
+      A1: String,
+      A2: String,
+      B: String,
+      C: String,
+      D1: String,
+      D2: String,
+      E: String
+    },    
     
     tpTreatment: {
-      positive: Number,
-      mechanical: Number,
-      biological: Number,
-      chemical: Number
+      positive: String,
+      mechanical: String,
+      biological: String,
+      chemical: String
     }
   },
 
@@ -65,23 +55,23 @@ var PsaFormSchema = new Schema({
     },
 
     tpTreatment: {
-      positive: Number,
-      mechanical: Number,
-      biological: Number,
-      chemical: Number
+      positive: String,
+      mechanical: String,
+      biological: String,
+      chemical: String
     }
   
   },
   
-  ovitraps: Number,
+  ovitraps: String,
   
   larvicides: {
-    BTiG_gramas: Number,
-    BTiG_depositos: Number,      
-    BTiWDg_gramas: Number,
-    BTiWDg_depositos: Number,
-    BsG_gramas: Number,
-    BsG_depositos: Number
+    BTiG_gramas: String,
+    BTiG_depositos: String,      
+    BTiWDg_gramas: String,
+    BTiWDg_depositos: String,
+    BsG_gramas: String,
+    BsG_depositos: String
   }
 
 })
