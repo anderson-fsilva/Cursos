@@ -1,0 +1,7 @@
+{
+  "name": "geocode",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
